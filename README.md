@@ -8,3 +8,10 @@ Run it with `ng serve -o` using the angular cli.
 
 #### Licensing
 MIT License
+
+
+Also added an Auth0 implementation
+
+So you can see it here in this video : 
+
+https://drive.google.com/file/d/1nW8nHF20dA92cB7LJLgYdb5cTv9ull_u/view
