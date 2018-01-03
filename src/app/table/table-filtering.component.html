@@ -1,0 +1,57 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> שם מלא </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> אימייל </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cellphone">
+        <mat-header-cell *matHeaderCellDef> פלאפון </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cellphone}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef> טלפון </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="company_name">
+        <mat-header-cell *matHeaderCellDef> שם החברה </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.company_name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="job">
+        <mat-header-cell *matHeaderCellDef>תפקיד </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.job}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="history">
+        <mat-header-cell *matHeaderCellDef>היסטוריית מופעים  </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.history}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator #paginator
+                 [pageSize]="5"
+                >  <!-- [pageSizeOptions]="[5, 10, 20]"-->
+  </mat-paginator>
+  </div>
