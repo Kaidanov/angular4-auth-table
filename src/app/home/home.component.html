@@ -1,8 +1,10 @@
 <h4 *ngIf="auth.isAuthenticated()">
   You are logged in!
     <div style="padding: 25px">
+    <app-table-filtering></app-table-filtering>
+
     <data-table-demo-1></data-table-demo-1>
-  
+
     <data-table-demo-2></data-table-demo-2>
     <data-table-demo-3></data-table-demo-3>
   </div>

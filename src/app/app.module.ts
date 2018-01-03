@@ -20,15 +20,22 @@ import { DataTableDemo2 } from './demo2/data-table-demo2';
 import { DataTableDemo3 } from './demo3/data-table-demo3';
 import { DataTableDemo1Remote } from './demo1/data-table-demo1-remote';
 import { AuthService } from './auth/auth.service';
+import { MaterialModule } from '../material.module';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TableFilteringComponent } from '../table/table-filtering.component';
 
 @NgModule({
   imports: [ BrowserModule,
     CommonModule,
     FormsModule,
     DataTableModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    MaterialModule,
+    BrowserAnimationsModule
   ],
-  declarations: [ AppComponent, HomeComponent, CallbackComponent, DataTableDemo1, DataTableDemo2, DataTableDemo3, DataTableDemo1Remote ],
+  declarations: [ AppComponent, HomeComponent, CallbackComponent,
+    TableFilteringComponent, DataTableDemo1, DataTableDemo2, DataTableDemo3, DataTableDemo1Remote ],
   bootstrap: [ AppComponent , HomeComponent ],
   providers: [AuthService]
 })
