@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +19,7 @@ import { MaterialModule } from '../material.module';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TableFilteringComponent } from './table/table-filtering.component';
+import { DataService } from './table/table-filtering.service';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -25,11 +27,13 @@ import { TableFilteringComponent } from './table/table-filtering.component';
     FormsModule,
    RouterModule.forRoot(ROUTES),
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    HttpModule
   ],
   declarations: [ AppComponent, HomeComponent, CallbackComponent,
     TableFilteringComponent ],
   bootstrap: [ AppComponent , HomeComponent ],
-  providers: [AuthService]
+  providers: [AuthService, DataService]
 })
 export class AppModule { }
